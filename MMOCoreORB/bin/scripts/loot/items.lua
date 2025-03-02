@@ -2283,3 +2283,4 @@ includeFile("items/wearables/wookiee/wke_skirt_s03.lua")
 includeFile("items/wearables/wookiee/wke_skirt_s04.lua")
 
 includeFile("items/component_loot/koro2_engine.lua")
+includeFile("items/quest/halcyon_quest_disk.lua")

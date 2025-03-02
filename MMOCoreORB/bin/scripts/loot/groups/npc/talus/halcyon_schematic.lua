@@ -5,7 +5,7 @@ halcyon_schematic = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "koro2_speeder_schematic", weight = 10000000},
+		{itemTemplate = "halcyon_quest_disk", weight = 10000000},
 	}
 }
 
