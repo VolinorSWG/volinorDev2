@@ -3,7 +3,7 @@
 halcyon_quest_disk = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "",
+	customObjectName = "Exospeeder Contract",
 	directObjectTemplate = "object/tangible/treasure_map/halcyon_disk.iff",
 	craftingValues = {
 	},

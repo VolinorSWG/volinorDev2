@@ -5,9 +5,14 @@ halcyon_paintings = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "krayt_dragon_tissue_rare", weight = 4000000},
-		{itemTemplate = "krayt_dragon_tissue_common", weight = 1000000},
-		{itemTemplate = "krayt_dragon_tissue_uncommon", weight = 5000000}
+		{itemTemplate = "art_bh1_1_f00_0000000000000000", weight = 1100000},
+		{itemTemplate = "art_bh1_1_f01_0000000000000000", weight = 1400000},
+		{itemTemplate = "art_bh1_1_f02_0000000000000000", weight = 1400000},
+		{itemTemplate = "art_bh1_1_f03_0000000000000000", weight = 1400000},
+		{itemTemplate = "art_bh1_1_f04_0000000000000000", weight = 1400000},
+		{itemTemplate = "art_bh1_1_f05_0000000000000000", weight = 1400000},
+		{itemTemplate = "art_bh1_1_f06_0000000000000000", weight = 1400000},
+		{itemTemplate = "art_bh1_1_f07_0000000000000000", weight = 500000},
 	}
 }
 

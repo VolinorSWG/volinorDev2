@@ -229,7 +229,10 @@ LokNymStrongholdScreenPlay = CityScreenPlay:new {
 		{"entertainer",60,-3.37845,0.999956,6.45641,44.9954,8145356, "happy"},
 		{"vendor",60,29.5658,13.25,9.61881,360.011,2745876, "nervous"},
 		{"vendor",60,32.2502,7.25,-1.46477,179.999,2745874, "conversation"},
-		{"vixur_webb", 60, -13.2, -0.9, -20.2, 22, 8145383, "npc_sitting_chair"}
+		{"vixur_webb", 60, -13.2, -0.9, -20.2, 22, 8145383, "npc_sitting_chair"},
+
+		-- Infinity Custom (HaLcyon Quest)
+		{"black_market_mechanic", 60, -17.9, 4.2, -37.1, -28, 6595514, ""}
 	}
 }
 

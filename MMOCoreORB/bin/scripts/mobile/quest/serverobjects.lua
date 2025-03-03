@@ -385,6 +385,7 @@ includeFile("quest/endor/theme_park_marauder_stranded_mercenary.lua")
 
 -- Lok
 includeFile("quest/lok/berema.lua")
+includeFile("quest/lok/black_market_mechanic.lua")
 includeFile("quest/lok/chewbacca.lua")
 includeFile("quest/lok/choster.lua")
 includeFile("quest/lok/han_solo.lua")
