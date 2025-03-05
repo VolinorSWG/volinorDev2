@@ -56,7 +56,7 @@ halcyon_guildmaster = Creature:new {
             groups = {
                 {group = "halcyon_schematic", chance = 100 * 100000}
             },
-            lootChance = 10 * 100000
+            lootChance = 7 * 100000
         }
 	},
 

@@ -1,39 +1,5 @@
 local ObjectManager = require("managers.object.object_manager")
 
-local mapStringName = { 
-		"pirate1", 
-		"pirate2", 
-		"bountyhunter1", 
-		"hedon1", 
-		"pirate3", 
-		"pirate4", 
-		"pirate5", 
-		"pirate6", 
-		"pirate7", 
-		"pirate8", 
-		"pirate9",
-		"pirate10",
-		"pirate11",
-		"pirate12",
-		"pirate13",
-		"pirate14",
-		"pirate15",
-		"pirate16",
-		"pirate17",
-		"pirate18",
-		"pirate19",
-	}
-
-local treasureMapData = {
-	{ planet = "corellia", x = 3400, y = -1400, bark = true }, -- Pirate 1
-}
-
-local ambushMobs = {
-	-- moblist, loot level low, high, big game points
-	{{"pirate_leader","pirate_armsman","pirate_armsman"},25,50, 1100, 10 * 60 * 1000},-- cor
-}
-
-
 HalcyonMapMenuComponent = { }
 
 function HalcyonMapMenuComponent:fillObjectMenuResponse(pSceneObject, pMenuResponse, pPlayer)
@@ -76,6 +42,9 @@ function HalcyonMapMenuComponent:doReadMap(pObject, pPlayer)
     if (currStage == nil) then
         HalcyonMapMenuComponent:setStage(pPlayer, 1)
     end
+
+	-- DEV ONLY, DELETE THIS WHEN DONE TESTING
+	HalcyonMapMenuComponent:setStage(pPlayer, 1)
     
 end
 
@@ -89,7 +58,7 @@ end
 
 function HalcyonMapMenuComponent:setUpHuntObjective(pPlayer, target)
 	local huntTarget = target
-	writeScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTarget", "target")
+	writeScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTarget", target)
 	writeScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTargetCount", 0)
 	writeScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTargetGoal", 1)
 
@@ -112,13 +81,27 @@ function HalcyonMapMenuComponent:notifyKilledHuntTarget(pPlayer, pVictim)
 
 	if (string.find(SceneObject(pVictim):getObjectName(), huntTarget)) then
 		targetCount = targetCount + 1
-		writeScreenPlayData(pPlayer, "JediTrials", "huntTargetCount", targetCount)
+		writeScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTargetCount", targetCount)
 
 		if (targetCount >= targetGoal) then
-			CreatureObject(pPlayer):sendSystemMessage("@jedi_trials:padawan_trials_progress") -- You have fulfilled the task given to you. Return to the Black Market Mechanic for your reward.
+			CreatureObject(pPlayer):sendSystemMessage("@conversation/halcyon_mechanic:hunt_task_complete") -- You have fulfilled the task given to you. Return to the Black Market Mechanic for your reward.
 			HalcyonMapMenuComponent:setStage(pPlayer, 5)
 			dropObserver(KILLEDCREATURE, "HalcyonMapMenuComponent", "notifyKilledHuntTarget", pPlayer)
 			return 1
+		end
+	end
+
+
+	return 0
+end
+
+function HalcyonMapMenuComponent:playerLoggedIn(pPlayer)
+	if (HalcyonMapMenuComponent:getStage(pPlayer) == 2 or HalcyonMapMenuComponent:getStage(pPlayer) == 3 or HalcyonMapMenuComponent:getStage(pPlayer) == 4) then
+		local targetCount = tonumber(readScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTargetCount"))
+		local targetGoal = tonumber(readScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTargetGoal"))
+
+		if (targetCount < targetGoal) then
+			createObserver(KILLEDCREATURE, "HalcyonMapMenuComponent", "notifyKilledHuntTarget", pPlayer)
 		end
 	end
 end
@@ -129,7 +112,6 @@ function HalcyonMapMenuComponent:giveReward(pPlayer)
 	if (pInventory == nil) then
 		return
 	end
-	-- Delete the Exospeeder Contract disk?
 
 	-- Give the player the schematic
 	local pItem = giveItem(pInventory, "object/tangible/loot/loot_schematic/koro2_speeder_schematic.iff", -1)
@@ -146,14 +128,18 @@ HalcyonConvoHandler = conv_handler:new {
 	themePark = nil
 }
 
-function HalcyonConvoHandler:getInitialMechanicScreen(pPlayer, pNpc, pConvTemplate)
+function HalcyonConvoHandler:getInitialScreen(pPlayer, pNpc, pConvTemplate)
 	local convoTemplate = LuaConversationTemplate(pConvTemplate)
 
 	if (HalcyonMapMenuComponent:getStage(pPlayer) == 1) then
 		return convoTemplate:getScreen("greet_disk")
+	elseif (HalcyonMapMenuComponent:getStage(pPlayer) == 2 or HalcyonMapMenuComponent:getStage(pPlayer) == 3 or HalcyonMapMenuComponent:getStage(pPlayer) == 4) then
+		return convoTemplate:getScreen("hunt_in_progress")
+	elseif (HalcyonMapMenuComponent:getStage(pPlayer) == 5) then
+		return convoTemplate:getScreen("task_complete")
 	elseif (HalcyonMapMenuComponent:getStage(pPlayer) == 8) then
 		return convoTemplate:getScreen("already_done")
-	elseif (HalcyonMapMenuComonent:getStage(pPlayer) == nil) then
+	elseif (HalcyonMapMenuComponent:getStage(pPlayer) == nil) then
 		return convoTemplate:getScreen("quest_tease")
 	end
 end
@@ -167,16 +153,16 @@ function HalcyonConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, sel
 	local screenID = screen:getScreenID()
 	local playerID = SceneObject(pPlayer):getObjectID()
 
-	if (screenID == hunt_task_acklay) then
+	if (screenID == "hunt_task_acklay") then
 		HalcyonMapMenuComponent:setStage(pPlayer, 2)
 		HalcyonMapMenuComponent:setUpHuntObjective(pPlayer, "acklay")
-	elseif (screenID == hunt_task_axkva) then
+	elseif (screenID == "hunt_task_axkva") then
 		HalcyonMapMenuComponent:setStage(pPlayer, 3)
 		HalcyonMapMenuComponent:setUpHuntObjective(pPlayer, "axkva_min")
-	elseif (screenID == hunt_task_overlord) then
+	elseif (screenID == "hunt_task_nyax") then
 		HalcyonMapMenuComponent:setStage(pPlayer, 4)
-		HalcyonMapMenuComponent:setUpHuntObjective(pPlayer, "death_wath_overlord")
-	elseif (screenID == task_complete) then
+		HalcyonMapMenuComponent:setUpHuntObjective(pPlayer, "lord_nyax")
+	elseif (screenID == "task_complete") then
 		if (HalcyonMapMenuComponent:getStage(pPlayer) == 5) then
 			HalcyonMapMenuComponent:giveReward(pPlayer)
 		end

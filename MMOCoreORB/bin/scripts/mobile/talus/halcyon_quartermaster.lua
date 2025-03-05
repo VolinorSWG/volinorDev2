@@ -56,7 +56,7 @@ halcyon_quartermaster = Creature:new {
             groups = {
                 {group = "halcyon_koro2", chance = 100 * 100000}
             },
-            lootChance = 10 * 100000
+            lootChance = 7 * 100000
         }
 	},
 

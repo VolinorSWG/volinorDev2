@@ -11,8 +11,8 @@ object_tangible_deed_vehicle_deed_koro2_speeder_deed = object_tangible_deed_vehi
 	experimentalWeights = {1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_durability"},
 	experimentalSubGroupTitles = {"null", "null", "hit_points"},
-	experimentalMin = {0, 0, 3000},
-	experimentalMax = {0, 0, 5000},
+	experimentalMin = {0, 0, 4000},
+	experimentalMax = {0, 0, 6000},
 	experimentalPrecision = {0, 0, 0},
 	experimentalCombineType = {0, 0, 1},
 }
