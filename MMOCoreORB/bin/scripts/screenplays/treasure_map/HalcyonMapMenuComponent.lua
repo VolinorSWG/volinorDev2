@@ -42,9 +42,6 @@ function HalcyonMapMenuComponent:doReadMap(pObject, pPlayer)
     if (currStage == nil) then
         HalcyonMapMenuComponent:setStage(pPlayer, 1)
     end
-
-	-- DEV ONLY, DELETE THIS WHEN DONE TESTING
-	HalcyonMapMenuComponent:setStage(pPlayer, 1)
     
 end
 
