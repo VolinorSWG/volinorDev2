@@ -4937,8 +4937,3 @@ object_tangible_loot_loot_schematic_shared_utensils_schematic = SharedTangibleOb
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_utensils_schematic, "object/tangible/loot/loot_schematic/shared_utensils_schematic.iff")
-
-object_tangible_loot_loot_schematic_shared_koro2_speeder_schematic = SharedTangibleObjectTemplate:new {
-	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_koro2_speeder_schematic.iff"
-}
-ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_koro2_speeder_schematic, "object/tangible/loot/loot_schematic/shared_koro2_speeder_schematic.iff")

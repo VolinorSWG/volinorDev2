@@ -45,7 +45,6 @@
 --Children folder includes
 
 -- Server Objects
-includeFile("tangible/treasure_map/halcyon_disk.lua")
 includeFile("tangible/treasure_map/treasure_map_base.lua")
 includeFile("tangible/treasure_map/treasure_map_bh.lua")
 includeFile("tangible/treasure_map/treasure_map_encoded_disk.lua")

@@ -3,8 +3,8 @@ object_tangible_deed_vehicle_deed_koro2_speeder_deed = object_tangible_deed_vehi
 
 	templateType = VEHICLEDEED,
 
-	controlDeviceObjectTemplate = "object/intangible/vehicle/koro2_speeder_pcd.iff",
-	generatedObjectTemplate = "object/mobile/vehicle/koro2_speeder.iff",
+	controlDeviceObjectTemplate = "../custom_scripts/object/intangible/vehicle/koro2_speeder_pcd.iff",
+	generatedObjectTemplate = "../custom_scripts/object/mobile/vehicle/koro2_speeder.iff",
 
 	numberExperimentalProperties = {1, 1, 1},
 	experimentalProperties = {"XX", "XX", "UT"},

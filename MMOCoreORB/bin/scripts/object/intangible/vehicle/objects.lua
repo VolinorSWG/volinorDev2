@@ -432,13 +432,3 @@ object_intangible_vehicle_shared_vehicle_pcd_base = SharedIntangibleObjectTempla
 }
 
 ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_vehicle_pcd_base, "object/intangible/vehicle/shared_vehicle_pcd_base.iff")
-
-object_intangible_vehicle_shared_grievous_wheel_bike_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_grievous_wheel_bike_pcd.iff"
-}
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_grievous_wheel_bike_pcd, "object/intangible/vehicle/shared_grievous_wheel_bike_pcd.iff")
-
-object_intangible_vehicle_shared_koro2_speeder_pcd = SharedIntangibleObjectTemplate:new {
-	clientTemplateFileName = "object/intangible/vehicle/shared_koro2_speeder_pcd.iff"
-}
-ObjectTemplates:addClientTemplate(object_intangible_vehicle_shared_koro2_speeder_pcd, "object/intangible/vehicle/shared_koro2_speeder_pcd.iff")

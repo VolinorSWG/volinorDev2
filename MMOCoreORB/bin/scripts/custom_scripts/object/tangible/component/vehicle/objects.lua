@@ -1,0 +1,5 @@
+object_tangible_component_vehicle_shared_veh_engine_koro2 = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/component/vehicle/shared_veh_engine_koro2.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_component_vehicle_shared_veh_power_plant_av21, "object/tangible/component/vehicle/shared_veh_engine_koro2.iff")

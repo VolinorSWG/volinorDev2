@@ -1824,5 +1824,4 @@ schematics = {
 	{path="object/draft_schematic/item/theme_park/alderaan/act2/dead_eye_decoder.iff"},
 	{path="object/draft_schematic/item/theme_park/alderaan/act3/dead_eye_prototype.iff"},
 	{path="object/draft_schematic/item/quest_item/fs_medic_puzzle_heal_pack.iff"},
-	{path="object/draft_schematic/vehicle/civilian/koro2_speeder.iff"},
 };

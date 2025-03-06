@@ -1,0 +1,9 @@
+object_tangible_deed_vehicle_deed_shared_grievous_wheel_bike_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/vehicle_deed/shared_grievous_wheel_bike_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_vehicle_deed_shared_grievous_wheel_bike_deed, "object/tangible/deed/vehicle_deed/shared_grievous_wheel_bike_deed.iff")
+
+object_tangible_deed_vehicle_deed_shared_koro2_speeder_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/vehicle_deed/shared_koro2_speeder_deed.iff"
+}
+ObjectTemplates:addClientTemplate(object_tangible_deed_vehicle_deed_shared_koro2_speeder_deed, "object/tangible/deed/vehicle_deed/shared_koro2_speeder_deed.iff")

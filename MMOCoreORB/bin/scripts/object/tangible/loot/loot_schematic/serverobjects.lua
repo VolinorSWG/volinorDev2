@@ -104,7 +104,6 @@ includeFile("tangible/loot/loot_schematic/geonosian_sonic_blaster_schematic.lua"
 includeFile("tangible/loot/loot_schematic/geonosian_sword_core_schematic.lua")
 includeFile("tangible/loot/loot_schematic/geonosian_tenloss_dxr6_schematic.lua")
 includeFile("tangible/loot/loot_schematic/hanging_planter_schematic.lua")
-includeFile("tangible/loot/loot_schematic/koro2_speeder_schematic.lua")
 includeFile("tangible/loot/loot_schematic/metal_recycler_schematic.lua")
 includeFile("tangible/loot/loot_schematic/microphone_s01_schematic.lua")
 includeFile("tangible/loot/loot_schematic/microphone_s02_schematic.lua")

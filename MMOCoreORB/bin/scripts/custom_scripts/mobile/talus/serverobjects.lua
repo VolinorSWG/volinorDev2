@@ -1,0 +1,5 @@
+includeFile("../custom_scripts/mobile/talus/halcyon_assassin.lua")
+includeFile("../custom_scripts/mobile/talus/halcyon_freelancer.lua")
+includeFile("../custom_scripts/mobile/talus/halcyon_guildmaster.lua")
+includeFile("../custom_scripts/mobile/talus/halcyon_hunter.lua")
+includeFile("../custom_scripts/mobile/talus/halcyon_quartermaster.lua")

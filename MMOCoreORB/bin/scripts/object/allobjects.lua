@@ -1220,3 +1220,11 @@ includeFile("weapon/ranged/vehicle/objects.lua")
 includeFile("weapon/ranged/objects.lua")
 includeFile("weapon/trap/objects.lua")
 includeFile("weapon/objects.lua")
+
+-- Custom_scripts
+includeFile("../custom_scripts/object/tangible/deed/vehicle_deed/objects.lua")
+includeFile("../custom_scripts/object/tangible/component/vehicle/objects.lua")
+includeFile("../custom_scripts/object/tangible/loot/objects.lua")
+includeFile("../custom_scripts/object/tangible/painting/objects.lua")
+includeFile("../custom_scripts/object/draft_schematic/vehicle/civilian/objects.lua")
+includeFile("../custom_scripts/object/intangible/vehicle//objects.lua")

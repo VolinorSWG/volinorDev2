@@ -46,14 +46,26 @@ function HalcyonMapMenuComponent:doReadMap(pObject, pPlayer)
 end
 
 function HalcyonMapMenuComponent:setStage(pPlayer, num)
+	if (pPlayer == nil) then
+		return
+	end
+
     writeScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "currentStage", num)
 end
 
 function HalcyonMapMenuComponent:getStage(pPlayer)
+	if (pPlayer == nil) then
+		return
+	end
+
     return tonumber(readScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "currentStage"))
 end
 
 function HalcyonMapMenuComponent:setUpHuntObjective(pPlayer, target)
+	if (pPlayer == nil) then
+		return
+	end
+
 	local huntTarget = target
 	writeScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTarget", target)
 	writeScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTargetCount", 0)
@@ -93,6 +105,10 @@ function HalcyonMapMenuComponent:notifyKilledHuntTarget(pPlayer, pVictim)
 end
 
 function HalcyonMapMenuComponent:playerLoggedIn(pPlayer)
+	if (pPlayer == nil) then
+		return
+	end
+
 	if (HalcyonMapMenuComponent:getStage(pPlayer) == 2 or HalcyonMapMenuComponent:getStage(pPlayer) == 3 or HalcyonMapMenuComponent:getStage(pPlayer) == 4) then
 		local targetCount = tonumber(readScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTargetCount"))
 		local targetGoal = tonumber(readScreenPlayData(pPlayer, "HalcyonMapMenuComponent", "huntTargetGoal"))
@@ -104,6 +120,10 @@ function HalcyonMapMenuComponent:playerLoggedIn(pPlayer)
 end
 
 function HalcyonMapMenuComponent:giveReward(pPlayer)
+	if (pPlayer == nil) then
+		return
+	end
+
 	local pInventory = SceneObject(pPlayer):getSlottedObject("inventory")
 
 	if (pInventory == nil) then
@@ -126,6 +146,10 @@ HalcyonConvoHandler = conv_handler:new {
 }
 
 function HalcyonConvoHandler:getInitialScreen(pPlayer, pNpc, pConvTemplate)
+	if (pPlayer == nil) then
+		return
+	end
+
 	local convoTemplate = LuaConversationTemplate(pConvTemplate)
 
 	if (HalcyonMapMenuComponent:getStage(pPlayer) == 1) then
@@ -142,6 +166,10 @@ function HalcyonConvoHandler:getInitialScreen(pPlayer, pNpc, pConvTemplate)
 end
 
 function HalcyonConvoHandler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, selectedOption, pConvScreen)
+	if (pPlayer == nil) then
+		return
+	end
+	
 	local screen = LuaConversationScreen(pConvScreen)
 
 	local pConvScreen = screen:cloneScreen()

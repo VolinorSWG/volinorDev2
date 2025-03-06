@@ -564,7 +564,7 @@ includeFile("caves/talus_chunker_bunker.lua")
 includeFile("caves/talus_detainment_center.lua")
 includeFile("caves/talus_erran_sif.lua")
 includeFile("caves/talus_giant_decay_mite_cave.lua")
-includeFile("caves/talus_giant_fynock_cave.lua")
+--includeFile("caves/talus_giant_fynock_cave.lua")
 includeFile("caves/talus_kahmurra_biogentic_research_station.lua")
 includeFile("caves/talus_lost_aqualish_cave.lua")
 includeFile("caves/talus_weapons_depot.lua")
@@ -698,7 +698,6 @@ includeFile("tools/MagicEightBallMenuComponent.lua")
 --Treasure Maps
 includeFile("treasure_map/EncodedDiskMenuComponent.lua")
 includeFile("treasure_map/TreasureMapMenuComponent.lua")
-includeFile("treasure_map/HalcyonMapMenuComponent.lua")
 
 --Race Tracks
 includeFile("racetracks/racetracks.lua")

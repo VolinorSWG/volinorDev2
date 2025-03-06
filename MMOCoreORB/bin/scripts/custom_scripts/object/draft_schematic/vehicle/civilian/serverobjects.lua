@@ -41,8 +41,8 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_tangible_treasure_map_treasure_map_quest = object_tangible_treasure_map_shared_treasure_map_quest:new {
-	objectMenuComponent = "HalcyonMapMenuComponent"
-}
 
-ObjectTemplates:addTemplate(object_tangible_treasure_map_treasure_map_quest, "object/tangible/treasure_map/halcyon_disk.iff")
+--Children folder includes
+
+-- Server Objects
+includeFile("../custom_scripts/object/draft_schematic/vehicle/civilian/koro2_speeder.lua")

@@ -1,0 +1,8 @@
+includeFile("../custom_scripts/object/draft_schematic/vehicle/civilian/serverobjects.lua")
+includeFile("../custom_scripts/object/tangible/treasure_map/serverobjects.lua")
+includeFile("../custom_scripts/object/tangible/painting/serverobjects.lua")
+includeFile("../custom_scripts/object/tangible/loot/serverobjects.lua")
+includeFile("../custom_scripts/object/tangible/deed/serverobjects.lua")
+includeFile("../custom_scripts/object/tangible/component/vehicle/serverobjects.lua")
+includeFile("../custom_scripts/object/intangible/vehicle/serverobjects.lua")
+includeFile("../custom_scripts/object/mobile/vehicle/serverobjects.lua")
